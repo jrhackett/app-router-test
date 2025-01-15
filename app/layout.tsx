@@ -30,9 +30,15 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col p-4 m-4 border border-black`}
       >
         <div className="flex gap-8">
-          <Link href="/" className="text-blue-700 underline">Home</Link>
-          <Link href="/parallel" className="text-blue-700 underline">Working non-subpath example</Link>
-          <Link href="/dashboard/sub" className="text-blue-700 underline">Broken subpath example</Link>
+          <Link href="/" className="text-blue-700 underline">
+            Home
+          </Link>
+          <Link href="/working" className="text-blue-700 underline">
+            Working non-subpath example
+          </Link>
+          <Link href="/broken/sub" className="text-blue-700 underline">
+            Broken subpath example
+          </Link>
         </div>
         {children}
       </body>
