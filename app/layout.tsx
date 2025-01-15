@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,12 +22,18 @@ export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
+  slot: React.ReactNode;
 }>) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col p-4 m-4 border border-black`}
       >
+        <div className="flex gap-8">
+          <Link href="/" className="text-blue-700 underline">Home</Link>
+          <Link href="/parallel" className="text-blue-700 underline">Working non-subpath example</Link>
+          <Link href="/dashboard/sub" className="text-blue-700 underline">Broken subpath example</Link>
+        </div>
         {children}
       </body>
     </html>
